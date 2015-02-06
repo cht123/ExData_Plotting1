@@ -8,7 +8,7 @@ hpc <- read.csv("household_power_consumption.txt", header=T, sep=';', na.strings
 hpc$Date <- as.Date(hpc$Date, format="%d/%m/%Y")
 
 # subset the data
-hpc_subset <- subset(hpc, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
+hpc_subset <- subset(hpc, subset=(Date == "2007-02-01" | Date == "2007-02-02"))
 
 # fix datetime
 datetime <- paste(as.Date(data$Date), data$Time)
